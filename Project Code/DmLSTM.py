@@ -131,7 +131,3 @@ def backprop_rnn(asset_returns, target_returns, target_volatility, hidden_dim=10
     # For publication: Return loss history for plotting convergence
     return (portfolio_original_weights, portfolio_returns_initial, weights, final_weights, 
             portfolio_returns_final, loss_history, model)
-
-# =============================================
-# Train Out of Sample 
-# =============================================

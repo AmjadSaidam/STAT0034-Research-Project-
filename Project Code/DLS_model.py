@@ -5,8 +5,12 @@ import torch.optim as optim
 from tqdm import tqdm
 from Performance_Metrics import calculate_sharpe_ratio
 
+'''
+DLS Model attempted replication from [10]
+'''
+
 # =============================================
-# LSTM RNN agenet [10] 
+# LSTM RNN agenet 
 # =============================================
 class SharpeLSTM(nn.Module):
     def __init__(self, n_assets: int, lookback: int, lstm_units: int = 64):
@@ -65,23 +69,6 @@ def std_ema(x, window=50, eps=1e-8):
         ema_std[t] = np.sqrt(ema_var[t] + eps)  # Add epsilon for numerical stability
     
     return ema_std
-
-'''
-def std_ema(x, window=50, init=0.04, eps=1e-8): 
-    alpha = 1 / (window + 2)
-    ema_var = np.zeros_like(x, dtype=float)
-    ema_std = np.zeros_like(x, dtype=float)
-
-    # initialize with variance of init
-    ema_var[0] = init**2
-    ema_std[0] = init
-
-    for i in range(1, len(x)):
-        ema_var[i] = alpha * (x[i]**2) + (1 - alpha) * ema_var[i-1]
-        ema_std[i] = np.sqrt(ema_var[i] + eps)  # avoid zero
-
-    return ema_std
-'''
 
 # =============================================
 #  REMOVE and import from Performance_Metrics.py 

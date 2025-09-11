@@ -56,11 +56,13 @@ def calculate_sortino_ratio(returns, annualisation_factor = 252**0.5, risk_free_
 # VaR and CVaR
 # =============================================
 
+# value at risk 
 def VaR(returns, alpha = 0.05): 
     if not isinstance(returns, pd.Series):
         returns.flatten() 
     return np.quantile(returns, alpha)
 
+# conditional value at risk 
 def CVaR(returns, alpha = 0.05):
     var = VaR(returns, alpha)
     return returns[returns <= var].mean()
