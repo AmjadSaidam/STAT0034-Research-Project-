@@ -12,7 +12,7 @@ Some of the key contents of this repository (high level overview) $\dots$
 
 * Submitted thesis titled "Distribution-Driven Portfolio Optimisation using Deep Learning".
 * Python files and notebook used to produce results in thesis.
-* Cloud hosted app that allows users to interact, download and trade models used in my thesis. 
+* Cloud hosted app that allows users to interact, download and trade models used in my thesis 💁‍♂️ [My App](amjadsaidamuclproject.streamlit.app). 
 
 ## Notes 
 
